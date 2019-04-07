@@ -1,0 +1,22 @@
+for($i = 0; $i < 3;$i++){
+	//Creation of objects in scene
+	string $sphere[] = `polySphere`;
+	move -x ($i*5);
+	string $cube[] = `polyCube`;
+	move -xy ($i*5) 3;
+	
+	//Creation of shader
+	string $matShader;
+	if($i == 2){
+		$matShader = `shadingNode -asShader blinn`;
+	}
+	$matShader = `shadingNode -asShader lambert`;	
+	
+	string $color = $matShader + ".color";
+	int $indColor[] = {0,0,0};
+	$indColor[$i] = 1;
+	select $cube[0];
+	
+	hyperShade -a $matShader $cube[0];
+	setAttr $color -type float3 $indColor[0] $indColor[1] $indColor[2];
+ }

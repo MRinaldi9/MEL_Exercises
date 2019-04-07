@@ -1,0 +1,2 @@
+string $sel[] = `ls -sl`;
+move -r -y 1.5;

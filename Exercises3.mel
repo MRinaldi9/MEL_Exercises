@@ -1,0 +1,2 @@
+string $selection[] = `ls -sl`;
+print(size($selection));

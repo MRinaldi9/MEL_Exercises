@@ -1,0 +1,7 @@
+string $transform[] = `ls -sl -type "transform"`;
+string $mesh[] = `ls -sl -type "mesh"`;
+string $joint[] = `ls -sl -type "joint"`;
+
+print(size($transform)+"\n");
+print(size($mesh)+"\n");
+print(size($joint)+"\n");
